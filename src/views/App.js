@@ -8,6 +8,7 @@ import Nav from './NAV/nav';
 import Home from './NAV/Home';
 import { Routes, Route } from "react-router-dom";
 import ListUser from './User/ListUser';
+import InfoUser from './User/InfoUser';
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/todos" element={<ListTodo/>}></Route>
           <Route path="/about" element={<Test />}></Route>
-          <Route path="/user" element={<ListUser />}></Route>    
-          </Routes>
+          <Route path="/user" element={<ListUser />} exact></Route>  
+          <Route path="/user/:id" element={<InfoUser />}></Route>  
+        </Routes>
       </header>
       <ToastContainer
 position="top-right"
